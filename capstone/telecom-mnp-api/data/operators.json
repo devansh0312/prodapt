@@ -1,0 +1,17 @@
+[
+  {
+    "id": "8e5fc061-cb52-42e9-bf3f-404fbd4643cc",
+    "name": "Airtel",
+    "circle": "Tamil Nadu"
+  },
+  {
+    "id": "8e95b884-7cfa-4c13-9e2f-e144d099ba3d",
+    "name": "Jio",
+    "circle": "Tamil Nadu"
+  },
+  {
+    "id": "e46b83e0-a87b-494e-b762-18249aaeba1a",
+    "name": "string",
+    "circle": "string"
+  }
+]

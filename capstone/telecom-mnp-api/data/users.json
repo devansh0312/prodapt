@@ -1,0 +1,66 @@
+[
+  {
+    "id": "b956102f-b1d6-4914-9151-b99a4fcd24c9",
+    "name": "Admin User",
+    "email": "admin@example.com",
+    "password_hash": "z8FaCdrhvIp-dwoBqwGl5vUG0Yc2WUoXhhK03UCCMbQ=",
+    "mobile_number": "9876543210",
+    "role": "admin"
+  },
+  {
+    "id": "434d5adf-8f8f-46af-9cd8-26a1e12061b4",
+    "name": "Agent User",
+    "email": "agent@example.com",
+    "password_hash": "z8FaCdrhvIp-dwoBqwGl5vUG0Yc2WUoXhhK03UCCMbQ=",
+    "mobile_number": "9876543211",
+    "role": "agent"
+  },
+  {
+    "id": "acd9154b-a466-4026-8e73-9e6e8397fde7",
+    "name": "Customer User",
+    "email": "customer@example.com",
+    "password_hash": "z8FaCdrhvIp-dwoBqwGl5vUG0Yc2WUoXhhK03UCCMbQ=",
+    "mobile_number": "9876543212",
+    "role": "customer"
+  },
+  {
+    "id": "f5f46b5a-66b8-4d19-8910-bf905a4068c8",
+    "name": "Admin",
+    "email": "admin@demo.com",
+    "password_hash": "z8FaCdrhvIp-dwoBqwGl5vUG0Yc2WUoXhhK03UCCMbQ=",
+    "mobile_number": "9876543210",
+    "role": "admin"
+  },
+  {
+    "id": "4102aa2c-b584-476e-a9bd-a6f4c4094ae6",
+    "name": "Agent",
+    "email": "agent@demo.com",
+    "password_hash": "z8FaCdrhvIp-dwoBqwGl5vUG0Yc2WUoXhhK03UCCMbQ=",
+    "mobile_number": "9876543211",
+    "role": "agent"
+  },
+  {
+    "id": "77408b7f-9751-480b-82b7-782cb6c66a1d",
+    "name": "Customer",
+    "email": "customer@demo.com",
+    "password_hash": "z8FaCdrhvIp-dwoBqwGl5vUG0Yc2WUoXhhK03UCCMbQ=",
+    "mobile_number": "9876543212",
+    "role": "customer"
+  },
+  {
+    "id": "c0675570-17d6-439e-aee4-6d0d5f323577",
+    "name": "string",
+    "email": "5oUH,Y-SBA4-mLTOHn0DtB,7*J{nk'KY5):guOgk>OJ'GqN$vr(HGFSl2NlV1ope@<}}OlS\"e^\"):*sVUzxNlU\\GOUzDD&u1Cbx/.$[Ra6#An|4[Sz=XzJb*VW.n<?Tlu9WCl}f|I[+.%#6D(/AP3MjLs%[;u)yo9\"~`0JO,6^xK?!M8I2^}&~~|7Pu3e)Su,|;gNs_sYVI<aF=Vrp",
+    "password_hash": "OjzhXXAtQSOKpVvtVqBm0GEjUW1U_phTWVNaNtTpBPc=",
+    "mobile_number": "9790113750",
+    "role": "customer"
+  },
+  {
+    "id": "f6e8eebf-e132-424c-9f2d-ad031f3ce691",
+    "name": "string",
+    "email": "5oUH,Y-SBA4-mLTOHn0DtB,7*J{nk'KY5):guOgk>OJ'GqN$vr(HGFSl2NlV1ope@<}}OlS\"e^\"):*sVUzxNlU\\GOUzDD&u1Cbx/.$[Ra6#An|4[Sz=XzJb*VW.n<?Tlu9WCl}f|I[+.%#6D(/AP3MjLs%[;u)yo9\"~`0JO,6^xK?!M8I2^}&~~|7Pu3e)Su,|;gNs_sYVI<aF=Vr",
+    "password_hash": "OjzhXXAtQSOKpVvtVqBm0GEjUW1U_phTWVNaNtTpBPc=",
+    "mobile_number": "9790113759",
+    "role": "admin"
+  }
+]

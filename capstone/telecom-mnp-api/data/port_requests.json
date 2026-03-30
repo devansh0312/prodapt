@@ -1,0 +1,32 @@
+[
+  {
+    "id": "48761aa5-fbba-438d-be26-26db98799bf0",
+    "user_id": "acd9154b-a466-4026-8e73-9e6e8397fde7",
+    "mobile_number": "9876543212",
+    "current_operator": "Airtel",
+    "target_operator": "Jio",
+    "circle": "Tamil Nadu",
+    "status": "completed",
+    "otp_verified": true,
+    "documents_uploaded": true,
+    "created_at": "2026-03-29T15:22:53.274768+00:00",
+    "updated_at": "2026-03-29T15:22:53.429772+00:00",
+    "verified_by": "434d5adf-8f8f-46af-9cd8-26a1e12061b4",
+    "admin_action_by": "b956102f-b1d6-4914-9151-b99a4fcd24c9"
+  },
+  {
+    "id": "65af1e52-73f1-48f9-a953-493b2dc031a2",
+    "user_id": "77408b7f-9751-480b-82b7-782cb6c66a1d",
+    "mobile_number": "9876543212",
+    "current_operator": "Airtel",
+    "target_operator": "Jio",
+    "circle": "Tamil Nadu",
+    "status": "completed",
+    "otp_verified": true,
+    "documents_uploaded": true,
+    "created_at": "2026-03-29T17:59:01.261049+00:00",
+    "updated_at": "2026-03-29T17:59:01.430063+00:00",
+    "verified_by": "4102aa2c-b584-476e-a9bd-a6f4c4094ae6",
+    "admin_action_by": "f5f46b5a-66b8-4d19-8910-bf905a4068c8"
+  }
+]

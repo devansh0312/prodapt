@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Response Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="page-shell">
+        <section class="hero">
+            <p class="eyebrow">AI-Assisted Complaint Triage</p>
+            <h1>Turn customer complaints into grounded support replies.</h1>
+            <p class="hero-copy">
+                This interface uses your Excel complaint dataset as retrieval context, then asks the model
+                to draft a response in either a strict or friendly tone.
+            </p>
+        </section>
+
+        <main class="workspace">
+            <section class="panel form-panel">
+                <div class="panel-heading">
+                    <h2>Generate Response</h2>
+                    <p>Paste a complaint, choose a response mode, and inspect which cases were retrieved.</p>
+                </div>
+
+                <form method="post" class="query-form">
+                    <label for="query">Customer complaint</label>
+                    <textarea
+                        id="query"
+                        name="query"
+                        rows="7"
+                        placeholder="Example: My product arrived damaged and I want a refund."
+                    >{{ query }}</textarea>
+
+                    <div class="mode-row">
+                        <span class="label-title">Response mode</span>
+                        <div class="mode-picker">
+                            <label class="mode-card">
+                                <input type="radio" name="mode" value="strict" {% if mode != "friendly" %}checked{% endif %}>
+                                <span>Strict</span>
+                                <small>Short, controlled, policy-first</small>
+                            </label>
+                            <label class="mode-card">
+                                <input type="radio" name="mode" value="friendly" {% if mode == "friendly" %}checked{% endif %}>
+                                <span>Friendly</span>
+                                <small>Warmer tone, still grounded in context</small>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit">Generate Support Reply</button>
+                </form>
+
+                {% if error %}
+                <div class="message error">{{ error }}</div>
+                {% endif %}
+            </section>
+
+            <section class="panel output-panel">
+                <div class="panel-heading">
+                    <h2>Model Output</h2>
+                    <p>The final answer is shown here, along with the retrieved complaint examples.</p>
+                </div>
+
+                {% if result %}
+                {% if result.warning %}
+                <div class="message warning">{{ result.warning }}</div>
+                {% endif %}
+                <div class="response-card">
+                    <div class="response-meta">
+                        <span class="badge">{{ mode|title }} mode</span>
+                        <span class="badge subtle">{{ result.retrieved_items|length }} matches used</span>
+                    </div>
+                    <p class="response-text">{{ result.response }}</p>
+                </div>
+
+                <div class="retrieval-grid">
+                    {% for item in result.retrieved_items %}
+                    <article class="retrieval-card">
+                        <div class="retrieval-topline">
+                            <span class="category">{{ item.title }}</span>
+                            <span class="score">Score {{ "%.3f"|format(item.score) }}</span>
+                        </div>
+                        <h3>{{ item.trouble }}</h3>
+                        <pre>{{ item.content.strip() }}</pre>
+                    </article>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="empty-state">
+                    <p>Your generated reply will appear here after you submit a complaint.</p>
+                </div>
+                {% endif %}
+            </section>
+        </main>
+    </div>
+</body>
+</html>

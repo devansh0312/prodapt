@@ -1,0 +1,202 @@
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:
+QUERY: my product is damaged i dont want it anymore
+MODE: strict
+DOCS: [{'title': 'Returns', 'trouble': 'Product arrived damaged', 'content': '\nTrouble: Product arrived damaged\nSolution: Request return within 7 days\nAlternate Solution: Offer partial refund\nCompany Response: We’re sorry your product arrived damaged. Please initiate a return within 7 days for a full refund.\n'}, {'title': 'Returns', 'trouble': 'Product damaged after use', 'content': '\nTrouble: Product damaged after use\nSolution: Check warranty\nAlternate Solution: Reject claim\nCompany Response: Please check warranty coverage.\n'}, {'title': 'Returns', 'trouble': 'Received defective product', 'content': '\nTrouble: Received defective product\nSolution: Process return request\nAlternate Solution: Provide discount\nCompany Response: We regret the inconvenience. Please return the defective product for a resolution.\n'}]
+PROMPT: 
+You are a professional customer support assistant.
+Use ONLY the provided policy context.
+Do not add extra assumptions.
+
+Context:
+
+Customer Issue Type: Product arrived damaged
+
+Trouble: Product arrived damaged
+Solution: Request return within 7 days
+Alternate Solution: Offer partial refund
+Company Response: We’re sorry your product arrived damaged. Please initiate a return within 7 days for a full refund.
+
+---
+
+Customer Issue Type: Product damaged after use
+
+Trouble: Product damaged after use
+Solution: Check warranty
+Alternate Solution: Reject claim
+Company Response: Please check warranty coverage.
+
+---
+
+Customer Issue Type: Received defective product
+
+Trouble: Received defective product
+Solution: Process return request
+Alternate Solution: Provide discount
+Company Response: We regret the inconvenience. Please return the defective product for a resolution.
+
+---
+
+
+Customer Issue:
+my product is damaged i dont want it anymore
+
+Give a clear and concise answer.
+
+TEMP: 0.2
+MAX_TOKENS: 150
+RESPONSE: We’re sorry your product arrived damaged. Please initiate a return within 7 days for a full refund.
+----------------------
+
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 619-287-426
+INFO:werkzeug:127.0.0.1 - - [20/Apr/2026 09:59:45] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/Apr/2026 09:59:45] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+INFO:werkzeug:127.0.0.1 - - [20/Apr/2026 10:00:07] "POST / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/Apr/2026 10:00:07] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Administrator\\Desktop\\ragproject2\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 619-287-426
+INFO:openai._base_client:Retrying request to /chat/completions in 0.434487 seconds
+INFO:openai._base_client:Retrying request to /chat/completions in 0.764166 seconds
+INFO:openai._base_client:Retrying request to /chat/completions in 0.411891 seconds
+INFO:openai._base_client:Retrying request to /chat/completions in 0.892085 seconds
+INFO:werkzeug: * Detected change in 'C:\\Users\\Administrator\\Desktop\\ragproject2\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 619-287-426
+INFO:openai._base_client:Retrying request to /chat/completions in 0.455498 seconds
+INFO:openai._base_client:Retrying request to /chat/completions in 0.806972 seconds
+ERROR:root:OpenAI generation failed
+Traceback (most recent call last):
+  File "C:\Python310\lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Python310\lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "C:\Python310\lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Python310\lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+  File "C:\Python310\lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Python310\lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+  File "C:\Python310\lib\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "C:\Python310\lib\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Python310\lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Python310\lib\site-packages\openai\_base_client.py", line 1019, in request
+    response = self._send_request(
+  File "C:\Python310\lib\site-packages\openai\_client.py", line 400, in _send_request
+    return self._send_with_auth_retry(request, stream=stream, **kwargs)
+  File "C:\Python310\lib\site-packages\openai\_client.py", line 378, in _send_with_auth_retry
+    response = super()._send_request(request, stream=stream, **kwargs)
+  File "C:\Python310\lib\site-packages\openai\_base_client.py", line 947, in _send_request
+    return self._client.send(request, stream=stream, **kwargs)
+  File "C:\Python310\lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "C:\Python310\lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "C:\Python310\lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "C:\Python310\lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "C:\Python310\lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "C:\Python310\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Python310\lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\ragproject2\main.py", line 216, in handle_query
+    response = generate_response(prompt, temp, max_tok)
+  File "C:\Users\Administrator\Desktop\ragproject2\main.py", line 166, in generate_response
+    response = client.chat.completions.create(
+  File "C:\Python310\lib\site-packages\openai\_utils\_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Python310\lib\site-packages\openai\resources\chat\completions\completions.py", line 1211, in create
+    return self._post(
+  File "C:\Python310\lib\site-packages\openai\_base_client.py", line 1314, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Python310\lib\site-packages\openai\_base_client.py", line 1054, in request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 619-287-426
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+ERROR:root:OpenAI generation failed
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\ragproject2\main.py", line 216, in handle_query
+    response = generate_response(prompt, temp, max_tok)
+  File "C:\Users\Administrator\Desktop\ragproject2\main.py", line 166, in generate_response
+    response = client.chat.completions.create(
+  File "C:\Python310\lib\site-packages\openai\_utils\_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Python310\lib\site-packages\openai\resources\chat\completions\completions.py", line 1211, in create
+    return self._post(
+  File "C:\Python310\lib\site-packages\openai\_base_client.py", line 1314, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Python310\lib\site-packages\openai\_base_client.py", line 1087, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************YdcA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'code': 'invalid_api_key', 'param': None}, 'status': 401}
+INFO:werkzeug:127.0.0.1 - - [20/Apr/2026 10:05:36] "POST / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/Apr/2026 10:05:37] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+ERROR:root:OpenAI generation failed
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\ragproject2\main.py", line 216, in handle_query
+    response = generate_response(prompt, temp, max_tok)
+  File "C:\Users\Administrator\Desktop\ragproject2\main.py", line 166, in generate_response
+    response = client.chat.completions.create(
+  File "C:\Python310\lib\site-packages\openai\_utils\_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Python310\lib\site-packages\openai\resources\chat\completions\completions.py", line 1211, in create
+    return self._post(
+  File "C:\Python310\lib\site-packages\openai\_base_client.py", line 1314, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Python310\lib\site-packages\openai\_base_client.py", line 1087, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************YdcA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'code': 'invalid_api_key', 'param': None}, 'status': 401}
+INFO:werkzeug:127.0.0.1 - - [20/Apr/2026 10:05:47] "POST / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/Apr/2026 10:05:47] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+ERROR:root:OpenAI generation failed
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\ragproject2\main.py", line 216, in handle_query
+    response = generate_response(prompt, temp, max_tok)
+  File "C:\Users\Administrator\Desktop\ragproject2\main.py", line 166, in generate_response
+    response = client.chat.completions.create(
+  File "C:\Python310\lib\site-packages\openai\_utils\_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Python310\lib\site-packages\openai\resources\chat\completions\completions.py", line 1211, in create
+    return self._post(
+  File "C:\Python310\lib\site-packages\openai\_base_client.py", line 1314, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Python310\lib\site-packages\openai\_base_client.py", line 1087, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-proj-********************************************************************************************************************************************************YdcA. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'code': 'invalid_api_key', 'param': None}, 'status': 401}
+INFO:werkzeug:127.0.0.1 - - [20/Apr/2026 10:06:09] "POST / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/Apr/2026 10:06:09] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -

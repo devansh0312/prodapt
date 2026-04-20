@@ -1,0 +1,6 @@
+flask
+openai
+pandas
+python-dotenv
+rank-bm25
+openpyxl
